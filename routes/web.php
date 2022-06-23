@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SellerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::prefix('/seller')->group( function () {
+    Route::get('/', [SellerController::class, 'index'])->name('seller.index');
+    Route::get('/create', [SellerController::class, 'create'])->name('seller.create');
+    Route::post('/', [SellerController::class, 'store'])->name('seller.store');
+    Route::get('/{id}', [SellerController::class, 'show'])->name('seller.show');
+    Route::get('/edit/{id}', [SellerController::class, 'edit'])->name('seller.edit');
+    Route::put('/{id}', [SellerController::class, 'update'])->name('seller.update');
+    Route::delete('/{id}', [SellerController::class, 'destroy'])->name('seller.delete');
 });
