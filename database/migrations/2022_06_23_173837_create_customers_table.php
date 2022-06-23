@@ -20,7 +20,7 @@ class CreateCustomersTable extends Migration
 
             $table->string('nome');
             $table->string('email');
-            $table->integer('cep');
+            $table->string('cep');
             $table->string('logradouro');
             $table->integer('numero');
             $table->string('bairro');
