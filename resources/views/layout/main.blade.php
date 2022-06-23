@@ -21,8 +21,8 @@
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo">Penalty</a>
                 <ul class="right">
-                    <li><a href="#">Representante</a></li>
-                    <li><a href="#">Cliente</a></li>
+                    <li><a href="{{route('seller.index')}}">Representante</a></li>
+                    <li><a href="{{route('customer.index')}}">Cliente</a></li>
                 </ul>
             </div>
         </div>
@@ -47,6 +47,10 @@
             var instances = M.FormSelect.init(elems);
         });
     </script>
+
+    <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('vendor/jquery-mask/jquery.mask.min.js')}}"></script>
+    <script src="{{asset('js/register.js')}}"></script>
 
 </body>
 </html>

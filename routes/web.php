@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SellerController;
 
@@ -22,4 +23,10 @@ Route::prefix('/seller')->group( function () {
     Route::get('/edit/{id}', [SellerController::class, 'edit'])->name('seller.edit');
     Route::put('/{id}', [SellerController::class, 'update'])->name('seller.update');
     Route::delete('/{id}', [SellerController::class, 'destroy'])->name('seller.delete');
+});
+
+Route::prefix('/customer')->group( function () {
+    Route::get('/', [CustomerController::class, 'index'])->name('customer.index');
+    Route::get('/create', [CustomerController::class, 'create'])->name('customer.create');
+    Route::post('/', [CustomerController::class, 'store'])->name('customer.store');
 });

@@ -13,4 +13,9 @@ class Seller extends Model
         'nome',
         'email'
     ];
+
+    public function customer()
+    {
+        return $this->hasMany(Customer::class);
+    }
 }
