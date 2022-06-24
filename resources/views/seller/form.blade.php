@@ -3,6 +3,7 @@
 @section('conteudo-pagina')
 
     <section class="section">
+        <p class="flow-text center">Cadastro de representante</p>
         <form action="{{route('seller.store')}}" method="POST">
             @csrf
 

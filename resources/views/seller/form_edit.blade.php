@@ -3,6 +3,9 @@
 @section('conteudo-pagina')
 
 <section class="section">
+
+    <p class="flow-text center">Alterar dados do representante</p>
+
     <form action="{{route('seller.update', $seller->id)}}" method="POST">
         @method('PUT')
         @csrf

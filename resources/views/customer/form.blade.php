@@ -3,6 +3,9 @@
 @section('conteudo-pagina')
 
     <section class="section">
+
+        <p class="flow-text center">Cadastro de cliente</p>
+
         <form action="{{route('customer.store')}}" method="POST" class="col s12">
             @csrf
 

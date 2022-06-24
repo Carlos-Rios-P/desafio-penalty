@@ -3,6 +3,9 @@
 @section('conteudo-pagina')
 
     <section class="section">
+
+        <p class="flow-text">Clientes:</p>
+
         <table class="highlight">
             <thead>
                 <tr>

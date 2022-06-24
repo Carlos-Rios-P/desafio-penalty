@@ -3,6 +3,9 @@
 @section('conteudo-pagina')
 
 <section class="section">
+
+    <p class="flow-text center">Alterar dados do cliente</p>
+
     <form action="{{route('customer.update', $customer->id)}}" method="POST">
         @method('PUT')
         @csrf
