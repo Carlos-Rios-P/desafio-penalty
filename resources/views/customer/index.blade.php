@@ -58,17 +58,9 @@
         </table>
         <div class="fixed-action-btn">
             <a class="btn-floating btn-large waves-effect waves-light" href="{{route('customer.create')}}">
-                <i class="large material-icons">add</i>
+                <i class="large material-icons green accent-4">add</i>
             </a>
         </div>
     </section>
-
-    <script>
-        $(document).on('blur', '#cep', function() {
-            const cep = $(this).val();
-
-            console.log(cep);
-        })
-    </script>
 
 @endsection
