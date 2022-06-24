@@ -46,7 +46,7 @@
         </table>
         <div class="fixed-action-btn">
             <a class="btn-floating btn-large waves-effect waves-light" href="{{route('seller.create')}}">
-                <i class="large material-icons">add</i>
+                <i class="large material-icons green accent-4">add</i>
             </a>
         </div>
     </section>

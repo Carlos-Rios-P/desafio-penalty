@@ -53,15 +53,9 @@ class SellerController extends Controller
      */
     public function show($id)
     {
-        try {
+        $seller = Seller::findOrFail($id);
 
-            $seller = Seller::findOrFail($id);
-
-            return response()->json($seller, 200);
-
-        } catch (\Throwable $th) {
-            return response()->json(['erro' => 'Representante comercial não encontrado'], 404);
-        }
+        return response()->json($seller, 200);
     }
 
     /**
@@ -86,16 +80,12 @@ class SellerController extends Controller
      */
     public function update(SellerRequest $request, $id)
     {
-        try {
+        $seller = Seller::findOrFail($id);
+        $seller->update($request->all());
 
-            $seller = Seller::findOrFail($id);
-            $seller->update($request->all());
+        $request->session()->flash('sucesso', "Representante alterado com sucesso");
 
-            return response()->json($seller, 200);
-
-        } catch (\Throwable $th) {
-            return response()->json(['erro' => 'Representante comercial não encontrado'], 404);
-        }
+        return response()->json($seller, 200);
     }
 
     /**
@@ -106,17 +96,11 @@ class SellerController extends Controller
      */
     public function destroy($id, Request $request)
     {
-        try {
+        $seller = Seller::findOrFail($id);
+        $seller->delete($id);
 
-            $seller = Seller::findOrFail($id);
-            $seller->delete($id);
+        $request->session()->flash('sucesso', "Representante excluído com sucesso");
 
-            $request->session()->flash('sucesso', "Representante excluído com sucesso");
-
-            return redirect()->route('seller.index');
-
-        } catch (\Throwable $th) {
-            return response()->json(['erro' => 'Representante comercial não encontrado'], 404);
-        }
+        return redirect()->route('seller.index');
     }
 }

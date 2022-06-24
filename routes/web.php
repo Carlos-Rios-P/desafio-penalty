@@ -15,6 +15,10 @@ use App\Http\Controllers\SellerController;
 |
 */
 
+Route::get('/', function(){
+    return view('front_page');
+})->name('welcome');
+
 Route::prefix('/seller')->group( function () {
     Route::get('/', [SellerController::class, 'index'])->name('seller.index');
     Route::get('/create', [SellerController::class, 'create'])->name('seller.create');
@@ -29,4 +33,7 @@ Route::prefix('/customer')->group( function () {
     Route::get('/', [CustomerController::class, 'index'])->name('customer.index');
     Route::get('/create', [CustomerController::class, 'create'])->name('customer.create');
     Route::post('/', [CustomerController::class, 'store'])->name('customer.store');
+    Route::get('/edit/{id}', [CustomerController::class, 'edit'])->name('customer.edit');
+    Route::put('/{id}', [CustomerController::class, 'update'])->name('customer.update');
+    Route::delete('/{id}', [CustomerController::class, 'destroy'])->name('customer.destroy');
 });

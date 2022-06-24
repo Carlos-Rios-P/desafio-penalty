@@ -30,13 +30,13 @@
                         <td>{{$customer->uf}}</td>
                         <td class="right-align">
 
-                            <a href="#">
+                            <a href="{{route('customer.edit', $customer->id)}}">
                                 <span style="cursor: pointer">
                                     <i class="material-icons blue-text text-darken-1">create</i>
                                 </span>
                             </a>
 
-                            <form action="#" method="POST" style="display:inline">
+                            <form action="{{route('customer.destroy', $customer->id)}}" method="POST" style="display:inline">
                                 @csrf
                                 @method('DELETE')
 

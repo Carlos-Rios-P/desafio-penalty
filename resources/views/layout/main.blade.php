@@ -16,10 +16,12 @@
 <body>
 
     {{-- Menu superior --}}
-   <nav class="grey darken-4">
+   <nav class="grey darken-1">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo">Penalty</a>
+                <a href="{{route('welcome')}}" class="brand-logo">
+                    <img src="{{asset('vendor/img/penalty-logo-1.png')}}" alt="" width="190-" height="45">
+                </a>
                 <ul class="right">
                     <li><a href="{{route('seller.index')}}">Representante</a></li>
                     <li><a href="{{route('customer.index')}}">Cliente</a></li>
