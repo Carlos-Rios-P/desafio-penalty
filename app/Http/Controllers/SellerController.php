@@ -53,9 +53,10 @@ class SellerController extends Controller
      */
     public function show($id)
     {
-        $seller = Seller::findOrFail($id);
+        $seller = Seller::find($id);
+        $customers = $seller->customer;
 
-        return response()->json($seller, 200);
+        return view('seller.show', compact('customers'));
     }
 
     /**

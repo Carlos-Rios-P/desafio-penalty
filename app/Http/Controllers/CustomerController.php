@@ -16,7 +16,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customers = Customer::all();
+        $customers = Customer::with('seller')->get();
 
         return view('customer.index', compact('customers'));
     }
@@ -56,7 +56,9 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        //
+        $customer = Customer::findOrFail($id);
+
+        return view('customer.show', compact('customer'));
     }
 
     /**

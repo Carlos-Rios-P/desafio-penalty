@@ -8,7 +8,7 @@
                 <tr>
                     <th>Nome</th>
                     <th>Email</th>
-                    <th class="right-align">Opções</th>
+                    <th class="center-align">Opções</th>
                 </tr>
             </thead>
             <tbody>
@@ -16,11 +16,17 @@
                     <tr>
                         <td>{{$seller->nome}}</td>
                         <td>{{$seller->email}}</td>
-                        <td class="right-align">
+                        <td class="center-align">
 
                             <a href="{{route('seller.edit', $seller->id)}}">
                                 <span style="cursor: pointer">
                                     <i class="material-icons blue-text text-darken-1">create</i>
+                                </span>
+                            </a>
+
+                            <a href="{{route('seller.show', $seller->id)}}">
+                                <span style="cursor: pointer">
+                                    <i class="material-icons blue-text text-darken-1">attach_file</i>
                                 </span>
                             </a>
 

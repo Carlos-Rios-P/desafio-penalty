@@ -8,13 +8,8 @@
                 <tr>
                     <th>Nome</th>
                     <th>Email</th>
-                    <th>CEP</th>
-                    <th>Logradouro</th>
-                    <th>Número</th>
-                    <th>Bairro</th>
-                    <th>Cidade</th>
-                    <th>UF</th>
-                    <th class="right-align">Opções</th>
+                    <th>Representante</th>
+                    <th class="center-align">Opções</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,17 +17,18 @@
                     <tr>
                         <td>{{$customer->nome}}</td>
                         <td>{{$customer->email}}</td>
-                        <td>{{$customer->cep}}</td>
-                        <td>{{$customer->logradouro}}</td>
-                        <td>{{$customer->numero}}</td>
-                        <td>{{$customer->bairro}}</td>
-                        <td>{{$customer->cidade}}</td>
-                        <td>{{$customer->uf}}</td>
-                        <td class="right-align">
+                        <td>{{$customer->seller->nome}}</td>
+                        <td class="center-align">
 
                             <a href="{{route('customer.edit', $customer->id)}}">
                                 <span style="cursor: pointer">
                                     <i class="material-icons blue-text text-darken-1">create</i>
+                                </span>
+                            </a>
+
+                            <a href="{{route('customer.show', $customer->id)}}">
+                                <span style="cursor: pointer">
+                                    <i class="material-icons blue-text text-darken-1">attach_file</i>
                                 </span>
                             </a>
 
